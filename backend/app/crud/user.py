@@ -39,3 +39,6 @@ class CRUDUser(CRUDBase[User, UserCreate, UserUpdate]):
         return user.is_superuser
 
 user = CRUDUser(User)
+
+def authenticate_user(db: Session, username: str, password: str) -> User:
+    return user.authenticate(db, username=username, password=password)
