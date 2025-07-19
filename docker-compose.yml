@@ -17,7 +17,7 @@ services:
     environment:
       - DATABASE_URL=postgresql://user:password@postgres:5432/fastapi_db
       - SECRET_KEY=your-secret-key-change-this-in-production
-      - FRONTEND_URL=http://localhost:5173
+      - FRONTEND_URL=http://localhost:4173
     depends_on:
       - postgres
     volumes:
@@ -26,7 +26,7 @@ services:
   frontend:
     build: ./frontend
     ports:
-      - "5173:80"
+      - "4173:4173"
     depends_on:
       - backend
     environment:
